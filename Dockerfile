@@ -1,7 +1,7 @@
-FROM alpine
+FROM alpine:edge
 MAINTAINER Rafael Römhild <rafael@roemhild.de>
 
-ENV VERSION 0.4.2
+ENV VERSION 0.5.2
 
 # Install requirements
 RUN apk add --update-cache \
@@ -12,11 +12,9 @@ RUN apk add --update-cache \
         openssl \
         py-jinja2 \
         py-libxml2 \
-        py-libxslt
-
-# Install py-lxml from testing repo
-RUN apk add --update-cache \
-        --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ py-lxml
+        py-libxslt \
+        py-lxml \
+        ca-certificates
 
 # Get Mailpile from github
 RUN git clone https://github.com/mailpile/Mailpile.git \
