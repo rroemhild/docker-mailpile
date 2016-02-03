@@ -7,7 +7,7 @@ ENV VERSION 0.5.2
 RUN apk add --update-cache \
         git \
         zlib \
-        gnupg \
+        gnupg1 \
         py-pip \
         openssl \
         py-jinja2 \
