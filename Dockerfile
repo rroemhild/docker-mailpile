@@ -8,7 +8,7 @@ RUN apk add --update-cache \
         git \
         zlib \
         gnupg1 \
-        py-pip \
+        py2-pip \
         openssl \
         py-jinja2 \
         py-libxml2 \
