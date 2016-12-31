@@ -14,6 +14,8 @@ RUN apk add --update-cache \
         py-libxml2 \
         py-libxslt \
         py-lxml \
+        py-pbr \
+        py-pillow \
         ca-certificates
 
 # Get Mailpile from github
