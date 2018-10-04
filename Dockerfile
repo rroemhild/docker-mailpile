@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine
 MAINTAINER Rafael Römhild <rafael@roemhild.de>
 
 ENV VERSION 0.5.2
