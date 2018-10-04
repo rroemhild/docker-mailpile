@@ -1,7 +1,7 @@
 FROM alpine
 MAINTAINER Rafael Römhild <rafael@roemhild.de>
 
-ENV VERSION 0.5.2
+ENV VERSION 1.0.0rc3
 
 # Install requirements
 RUN apk add --update-cache \
