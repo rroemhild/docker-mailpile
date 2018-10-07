@@ -1,7 +1,7 @@
 FROM alpine
 MAINTAINER Rafael Römhild <rafael@roemhild.de>
 
-ENV VERSION 0.5.2
+ENV VERSION 1.0.0rc3
 
 # Install requirements
 RUN apk add --update-cache \
@@ -16,6 +16,8 @@ RUN apk add --update-cache \
         py-lxml \
         py-pbr \
         py-pillow \
+	py-cffi \
+	py-cryptography \
         ca-certificates
 
 # Get Mailpile from github
