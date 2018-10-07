@@ -16,8 +16,8 @@ RUN apk add --update-cache \
         py-lxml \
         py-pbr \
         py-pillow \
-	py-cffi \
-	py-cryptography \
+        py-cffi \
+        py-cryptography \
         ca-certificates
 
 # Get Mailpile from github
@@ -35,5 +35,5 @@ RUN ./mp setup
 CMD ./mp --www=0.0.0.0:33411 --wait
 EXPOSE 33411
 
-VOLUME /mailpile-data/.local/share/Mailpile
-VOLUME /mailpile-data/.gnupg
+VOLUME /root/.local/share/Mailpile
+VOLUME /root/.gnupg
