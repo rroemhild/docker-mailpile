@@ -7,6 +7,7 @@ ENV VERSION 1.0.0rc6
 RUN apk add --update-cache \
         git \
         zlib \
+        gnupg \
         gnupg1 \
         py2-pip \
         openssl \
