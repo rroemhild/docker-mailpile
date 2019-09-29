@@ -23,7 +23,7 @@ RUN apk add --update-cache \
         
 # Mailpile read timezone from server, so in docker-compose you can change TZ
 RUN apk add --no-cache tzdata
-ENV TZ America/Lima
+ENV TZ UTC
 
 # Get Mailpile from github
 RUN git clone https://github.com/mailpile/Mailpile.git \
