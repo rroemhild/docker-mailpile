@@ -21,7 +21,7 @@ RUN apk add --update-cache \
         py-cryptography \
         ca-certificates
         
-# Mailpile read 
+# Mailpile read timezone from server, so in docker-compose you can change TZ
 RUN apk add --no-cache tzdata
 ENV TZ America/Lima
 
