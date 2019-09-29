@@ -2,6 +2,7 @@ FROM alpine
 MAINTAINER Rafael Römhild <rafael@roemhild.de>
 
 ENV VERSION 1.0.0rc6
+ENV TZ "Etc/GMT"
 
 # Install requirements
 RUN apk add --update-cache \
@@ -23,7 +24,9 @@ RUN apk add --update-cache \
         
 # Mailpile read timezone from server, so in docker-compose you can change TZ
 RUN apk add --no-cache tzdata
-ENV TZ Etc/GMT
+
+RUN ln -sf "/usr/share/zoneinfo/$TZ" /etc/localtime && \
+    echo "$TZ" > /etc/timezone && date
 
 # Get Mailpile from github
 RUN git clone https://github.com/mailpile/Mailpile.git \
