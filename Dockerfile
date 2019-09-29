@@ -20,6 +20,10 @@ RUN apk add --update-cache \
         py-cffi \
         py-cryptography \
         ca-certificates
+        
+# Mailpile read 
+RUN apk add --no-cache tzdata
+ENV TZ America/Lima
 
 # Get Mailpile from github
 RUN git clone https://github.com/mailpile/Mailpile.git \
