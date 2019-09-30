@@ -3,10 +3,13 @@ MAINTAINER Rafael Römhild <rafael@roemhild.de>
 
 ENV VERSION 1.0.0rc6
 ENV TZ "Etc/GMT"
+ENV MAILPILE_GNUPG/GA="/usr/bin/gpg-agent"
+ENV MAILPILE_GNUPG/DM="/usr/bin/dirmngr	"
 
 # Install requirements
 RUN apk add --update-cache \
         git \
+        tor \
         zlib \
         gnupg \
         gnupg1 \
