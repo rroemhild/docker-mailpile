@@ -1,12 +1,17 @@
 FROM alpine
 MAINTAINER Rafael Römhild <rafael@roemhild.de>
 
-ENV VERSION 1.0.0rc5
+ENV VERSION 1.0.0rc6
+ENV TZ "Etc/GMT"
+ENV MAILPILE_GNUPG/GA "/usr/bin/gpg-agent"
+ENV MAILPILE_GNUPG/DM "/usr/bin/dirmngr"
 
 # Install requirements
 RUN apk add --update-cache \
         git \
+        tor \
         zlib \
+        gnupg \
         gnupg1 \
         py2-pip \
         openssl \
@@ -19,6 +24,12 @@ RUN apk add --update-cache \
         py-cffi \
         py-cryptography \
         ca-certificates
+        
+# Mailpile read timezone from server, so in docker-compose you can change TZ
+RUN apk add --no-cache tzdata
+
+RUN ln -sf "/usr/share/zoneinfo/$TZ" /etc/localtime && \
+    echo "$TZ" > /etc/timezone && date
 
 # Get Mailpile from github
 RUN git clone https://github.com/mailpile/Mailpile.git \
