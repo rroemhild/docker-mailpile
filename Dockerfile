@@ -5,6 +5,7 @@ ENV VERSION 1.0.0rc6
 ENV TZ "Etc/GMT"
 ENV MAILPILE_GNUPG/GA "/usr/bin/gpg-agent"
 ENV MAILPILE_GNUPG/DM "/usr/bin/dirmngr"
+ENV MAILPILE_TOR "/usr/bin/tor"
 
 # Install requirements
 RUN apk add --update-cache \
@@ -24,7 +25,7 @@ RUN apk add --update-cache \
         py-cffi \
         py-cryptography \
         ca-certificates
-        
+
 # Mailpile read timezone from server, so in docker-compose you can change TZ
 RUN apk add --no-cache tzdata
 
