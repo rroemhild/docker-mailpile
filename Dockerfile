@@ -6,6 +6,8 @@ ENV TZ "Etc/GMT"
 ENV MAILPILE_GNUPG/GA "/usr/bin/gpg-agent"
 ENV MAILPILE_GNUPG/DM "/usr/bin/dirmngr"
 ENV MAILPILE_TOR "/usr/bin/tor"
+ENV MAILPILE_OPENSSL "/usr/bin/openssl"
+ENV MAILPILE_GNUPG "/usr/bin/gpg"
 
 # Install requirements
 RUN apk add --update-cache \
